@@ -1,0 +1,27 @@
+﻿using Shop.DataAccess.Concrete.EntityFramework.Mappings;
+using Shop.Entities.Concrete;
+using System.Data.Entity;
+
+namespace Shop.DataAccess.Tests.EntityFramework.Configuration
+{
+    class ShopTestContext : DbContext
+    {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        public ShopTestContext()
+        {
+            Database.SetInitializer(new DropCreateDatabaseAlways<ShopTestContext>());
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new MapProduct());
+            modelBuilder.Configurations.Add(new MapCategory());
+            modelBuilder.Configurations.Add(new MapRole());
+            modelBuilder.Configurations.Add(new MapUser());
+        }
+    }
+}

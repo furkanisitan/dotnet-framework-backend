@@ -1,4 +1,5 @@
 ﻿using Shop.Core.Entities;
+using System;
 
 namespace Shop.Entities.Concrete
 {
@@ -6,7 +7,7 @@ namespace Shop.Entities.Concrete
     {
         public int Id { get; set; }
         public int CategoryId { get; set; }
-        public int UnitsInStock { get; set; }
+        public short UnitsInStock { get; set; }
 
         public decimal UnitPrice { get; set; }
 
