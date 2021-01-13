@@ -1,18 +1,16 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shop.DataAccess.Concrete.EntityFramework;
 using System.Linq;
-using Shop.DataAccess.Tests.EntityFramework.Configuration;
-
 
 namespace Shop.DataAccess.Tests.EntityFramework
 {
     [TestClass]
-    public class MappingTests
+    public class DbInitializerTests
     {
         [TestMethod]
-        public void Create_database_with_mappings()
+        public void ShopContextDbInitializer()
         {
-            var db = new ShopTestContext();
+            var db = new ShopContext();
             var categories = db.Categories.ToList();
         }
 

@@ -20,7 +20,7 @@ namespace Shop.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.Id).HasColumnName("ProductId");
             Property(x => x.Name).IsRequired().HasColumnType("nvarchar").HasMaxLength(100);
             Property(x => x.UnitsInStock).HasColumnType("smallint");
-            Property(x => x.UnitPrice).HasColumnType("money");
+            Property(x => x.UnitPrice);
         }
     }
 }
