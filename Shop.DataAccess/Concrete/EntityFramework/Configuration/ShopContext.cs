@@ -1,9 +1,9 @@
-﻿using Shop.DataAccess.Concrete.EntityFramework.DatabaseInitializers;
+﻿using System.Data.Entity;
+using Shop.DataAccess.Concrete.EntityFramework.Configuration.DatabaseInitializers;
 using Shop.DataAccess.Concrete.EntityFramework.Mappings;
 using Shop.Entities.Concrete;
-using System.Data.Entity;
 
-namespace Shop.DataAccess.Concrete.EntityFramework
+namespace Shop.DataAccess.Concrete.EntityFramework.Configuration
 {
     public class ShopContext : DbContext
     {

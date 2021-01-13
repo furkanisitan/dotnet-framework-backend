@@ -1,9 +1,9 @@
-﻿using Bogus;
-using Shop.Entities.Concrete;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
+using Bogus;
+using Shop.Entities.Concrete;
 
-namespace Shop.DataAccess.Concrete.EntityFramework.DatabaseInitializers
+namespace Shop.DataAccess.Concrete.EntityFramework.Configuration.DatabaseInitializers
 {
     internal static class ShopContextDbInitializer
     {

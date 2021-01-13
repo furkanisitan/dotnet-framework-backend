@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shop.DataAccess.Concrete.EntityFramework;
+using Shop.DataAccess.Concrete.EntityFramework.Configuration;
 using System.Linq;
 
 namespace Shop.DataAccess.Tests.EntityFramework

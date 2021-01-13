@@ -54,12 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\EntityFramework\DatabaseInitializers\ShopContextDbInitializer.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\IRoleDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\Configuration\DatabaseInitializers\ShopContextDbInitializer.cs" />
+    <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRoleDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\MapCategory.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\MapProduct.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\MapRole.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\MapUser.cs" />
-    <Compile Include="Concrete\EntityFramework\ShopContext.cs" />
+    <Compile Include="Concrete\EntityFramework\Configuration\ShopContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +75,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj">
+      <Project>{f8184748-83f9-4c03-b491-ee5821a3fa9a}</Project>
+      <Name>Shop.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shop.Entities\Shop.Entities.csproj">
       <Project>{37299921-0470-42b6-8ca8-08c62030ccd8}</Project>
       <Name>Shop.Entities</Name>
