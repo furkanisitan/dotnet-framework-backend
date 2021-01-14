@@ -1,0 +1,33 @@
+﻿@model Shop.MVCWebUI.Models.ProductListViewModel
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">UnitPrice</th>
+            <th scope="col">UnitsInStock</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var product in Model.Products)
+        {
+            <tr data-product-id="@product.Id" data-category-id="@product.CategoryId">
+                <th scope="row">@product.Id</th>
+                <td>@product.Name</td>
+                <td>@product.UnitPrice</td>
+                <td>@product.UnitsInStock</td>
+                <td>@product.Category.Name</td>
+                <td>
+                    <a href="javascript:void(0)" title="update"><i class="bi bi-pencil-square"></i></a>
+                    &nbsp;
+                    <a href="javascript:void(0)" title="delete"><i class="bi bi-x-square"></i></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

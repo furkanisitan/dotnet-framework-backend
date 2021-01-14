@@ -1,5 +1,4 @@
 ﻿using Shop.Core.Entities;
-using System;
 
 namespace Shop.Entities.Concrete
 {
@@ -13,6 +12,7 @@ namespace Shop.Entities.Concrete
 
         public string Name { get; set; }
 
-        public virtual Category Category { get; set; }
+        // no virtual => eager loading
+        public Category Category { get; set; }
     }
 }

@@ -1,17 +1,40 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Product List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row">
-
-    <div class="col col-4">
-
-        @Html.Action("CategoryList", "Category")
-
-    </div>
-
-
+    <div class="col col-3">@Html.Action("CategoryList", "Category")</div>
+    <div class="col col-9"><div id="product-list"></div></div>
 </div>
 
+@section scripts
+{
+
+    <script>
+
+        const categoryList = document.getElementById("category-list");
+        const productList = document.getElementById("product-list");
+
+        eventListeners();
+        clickDefaultCategory();
+
+        function eventListeners() {
+            categoryList.addEventListener("click", getProductsByCategory);
+        }
+
+        function getProductsByCategory(e) {
+
+            fetch(`@Url.Action("ProductList", "Product")?categoryId=${e.target.id}`)
+                .then(res => res.text())
+                .then(html => productList.innerHTML = html);
+        }
+
+        function clickDefaultCategory() {
+
+            const defaultCategory = categoryList.querySelector(".active");
+            if (defaultCategory) defaultCategory.click();
+        }
+
+    </script>
+}
