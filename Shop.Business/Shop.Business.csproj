@@ -65,6 +65,10 @@
       <Project>{924cc61d-f131-4a67-9899-2b99efeabb1a}</Project>
       <Name>Shop.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Shop.Entities\Shop.Entities.csproj">
+      <Project>{37299921-0470-42b6-8ca8-08c62030ccd8}</Project>
+      <Name>Shop.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
