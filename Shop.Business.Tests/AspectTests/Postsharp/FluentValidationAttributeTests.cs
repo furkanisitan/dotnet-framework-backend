@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shop.Business.Aspects.Postsharp.ValidationAspects;
 using Shop.Business.ValidationRules.FluentValidation;
 using Shop.Entities.Concrete;
 using System.Reflection;
 
-namespace Shop.Business.Tests.ValidationTests.FluentValidation
+namespace Shop.Business.Tests.AspectTests.Postsharp
 {
     [TestClass]
     public class FluentValidationAttributeTests
@@ -19,7 +20,6 @@ namespace Shop.Business.Tests.ValidationTests.FluentValidation
 
         [FluentValidation(typeof(ProductValidator))]
         private void InstanceMethod(Product product) { }
-
 
     }
 }

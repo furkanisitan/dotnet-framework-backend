@@ -4,16 +4,13 @@ using System.Data.Entity;
 
 namespace Shop.DataAccess.Tests.EntityFramework.Configuration
 {
-    class ShopTestContext : DbContext
+    class ShopDataAccessTestContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<User> Users { get; set; }
 
-        public ShopTestContext()
+        public ShopDataAccessTestContext()
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<ShopTestContext>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<ShopDataAccessTestContext>());
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

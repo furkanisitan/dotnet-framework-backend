@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shop.DataAccess.Concrete.EntityFramework.Configuration;
-using System.Linq;
 
 namespace Shop.DataAccess.Tests.EntityFramework
 {
@@ -10,8 +9,8 @@ namespace Shop.DataAccess.Tests.EntityFramework
         [TestMethod]
         public void ShopContextDbInitializer()
         {
-            var db = new ShopContext();
-            var categories = db.Categories.ToList();
+            var context = new ShopContext();
+            context.Database.Initialize(true);
         }
 
     }

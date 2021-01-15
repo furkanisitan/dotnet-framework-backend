@@ -77,8 +77,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspectTests\Postsharp\TransactionScopeAttributeTests.cs" />
+    <Compile Include="Db\EntityFramework\Configuration\ShopBusinessTestContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidationTests\FluentValidation\FluentValidationAttributeTests.cs" />
+    <Compile Include="AspectTests\Postsharp\FluentValidationAttributeTests.cs" />
     <Compile Include="ValidationTests\FluentValidation\ProductValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +97,7 @@
       <Name>Shop.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

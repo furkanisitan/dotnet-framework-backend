@@ -5,7 +5,7 @@ using Shop.Core.CrossCuttingConcerns.Validation.FluentValidation;
 using System;
 using System.Linq;
 
-namespace Shop.Business.ValidationRules.FluentValidation
+namespace Shop.Business.Aspects.Postsharp.ValidationAspects
 {
     /// <summary>
     /// Validates parameters of type 'IEntity'

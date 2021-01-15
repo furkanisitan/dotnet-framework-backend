@@ -13,6 +13,7 @@ namespace Shop.Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
+            // service and dal classes
             Bind<IProductService>().To<ProductManager>().InSingletonScope();
             Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
 
@@ -25,6 +26,7 @@ namespace Shop.Business.DependencyResolvers.Ninject
             Bind<IRoleService>().To<RoleManager>().InSingletonScope();
             Bind<IRoleDal>().To<EfRoleDal>().InSingletonScope();
 
+            // validator classes
             Bind<IValidator<Product>>().To<ProductValidator>().InSingletonScope();
         }
     }

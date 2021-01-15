@@ -57,7 +57,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFramework\Configuration\ShopTestContext.cs" />
+    <Compile Include="EntityFramework\Configuration\ShopDataAccessTestContext.cs" />
     <Compile Include="EntityFramework\DbInitializerTests.cs" />
     <Compile Include="EntityFramework\MappingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
