@@ -1,8 +1,11 @@
-﻿using Ninject.Modules;
+﻿using FluentValidation;
+using Ninject.Modules;
 using Shop.Business.Abstract;
 using Shop.Business.Concrete.Managers;
+using Shop.Business.ValidationRules.FluentValidation;
 using Shop.DataAccess.Abstract;
 using Shop.DataAccess.Concrete.EntityFramework;
+using Shop.Entities.Concrete;
 
 namespace Shop.Business.DependencyResolvers.Ninject
 {
@@ -21,6 +24,8 @@ namespace Shop.Business.DependencyResolvers.Ninject
 
             Bind<IRoleService>().To<RoleManager>().InSingletonScope();
             Bind<IRoleDal>().To<EfRoleDal>().InSingletonScope();
+
+            Bind<IValidator<Product>>().To<ProductValidator>().InSingletonScope();
         }
     }
 }
