@@ -77,6 +77,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspectTests\Postsharp\CacheAttributeTests.cs" />
+    <Compile Include="AspectTests\Postsharp\CacheRemoveAttributeTests.cs" />
     <Compile Include="AspectTests\Postsharp\TransactionScopeAttributeTests.cs" />
     <Compile Include="Db\EntityFramework\Configuration\ShopBusinessTestContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +93,10 @@
     <ProjectReference Include="..\Shop.Business\Shop.Business.csproj">
       <Project>{0a5c2e31-47b0-4fb5-acfe-2e1d333b74e2}</Project>
       <Name>Shop.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop.Core\Shop.Core.csproj">
+      <Project>{f8184748-83f9-4c03-b491-ee5821a3fa9a}</Project>
+      <Name>Shop.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shop.Entities\Shop.Entities.csproj">
       <Project>{37299921-0470-42b6-8ca8-08c62030ccd8}</Project>

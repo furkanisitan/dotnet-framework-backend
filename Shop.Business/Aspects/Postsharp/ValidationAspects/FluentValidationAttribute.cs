@@ -8,7 +8,7 @@ using System.Linq;
 namespace Shop.Business.Aspects.Postsharp.ValidationAspects
 {
     /// <summary>
-    /// Validates parameters of type 'IEntity'
+    /// Validates parameters of type 'IEntity'.
     /// </summary>
     [PSerializable]
     public sealed class FluentValidationAttribute : OnMethodBoundaryAspect
@@ -16,7 +16,7 @@ namespace Shop.Business.Aspects.Postsharp.ValidationAspects
         private Type _validatorType;
         private string[] _ruleSets;
 
-        /// <param name="validatorType">Type of validation class</param>
+        /// <param name="validatorType">Type of validation class.</param>
         /// <param name="ruleSets">The names of the ruleSets to validate. (optional)</param>
         public FluentValidationAttribute(Type validatorType, params string[] ruleSets)
         {
