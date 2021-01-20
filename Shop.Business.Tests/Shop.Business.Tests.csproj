@@ -81,6 +81,7 @@
     <Compile Include="AspectTests\Postsharp\CacheAttributeTests.cs" />
     <Compile Include="AspectTests\Postsharp\CacheRemoveAttributeTests.cs" />
     <Compile Include="AspectTests\Postsharp\Log4NetAttributeTests.cs" />
+    <Compile Include="AspectTests\Postsharp\PerformanceCounterAttributeTests.cs" />
     <Compile Include="AspectTests\Postsharp\TransactionScopeAttributeTests.cs" />
     <Compile Include="Db\EntityFramework\Configuration\ShopBusinessTestContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

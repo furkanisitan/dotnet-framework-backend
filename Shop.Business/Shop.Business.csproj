@@ -61,6 +61,7 @@
     <Compile Include="Aspects\Postsharp\CacheAspects\CacheAttribute.cs" />
     <Compile Include="Aspects\Postsharp\CacheAspects\CacheRemoveAttribute.cs" />
     <Compile Include="Aspects\Postsharp\LogAspects\Log4NetAttribute.cs" />
+    <Compile Include="Aspects\Postsharp\PerformanceAspects\PerformanceCounterAttribute.cs" />
     <Compile Include="Aspects\Postsharp\TransactionAspects\TransactionScopeAttribute.cs" />
     <Compile Include="Aspects\Postsharp\ValidationAspects\FluentValidationAttribute.cs" />
     <Compile Include="Concrete\Managers\CategoryManager.cs" />
