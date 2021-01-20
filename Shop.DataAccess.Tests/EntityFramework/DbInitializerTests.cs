@@ -7,7 +7,7 @@ namespace Shop.DataAccess.Tests.EntityFramework
     public class DbInitializerTests
     {
         [TestMethod]
-        public void ShopContextDbInitializer()
+        public void Test_ShopContextDbInitializer()
         {
             var context = new ShopContext();
             context.Database.Initialize(true);

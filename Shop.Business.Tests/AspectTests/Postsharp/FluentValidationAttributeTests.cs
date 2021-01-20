@@ -12,7 +12,7 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
     {
 
         [TestMethod]
-        public void Test_instance_method()
+        public void TestInstanceMethod()
         {
             var ex = Assert.ThrowsException<TargetInvocationException>(() => InstanceMethod(new Product { Name = "" }));
             Assert.IsTrue(ex.InnerException is ValidationException);

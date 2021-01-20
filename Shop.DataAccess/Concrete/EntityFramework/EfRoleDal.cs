@@ -5,7 +5,7 @@ using Shop.Entities.Concrete;
 
 namespace Shop.DataAccess.Concrete.EntityFramework
 {
-    public class EfRoleDal : EfBaseRepository<Role, ShopContext>, IRoleDal
+    public class EfRoleDal : EfEntityRepositoryBase<Role, ShopContext>, IRoleDal
     {
     }
 }

@@ -10,7 +10,7 @@ using System.Linq.Expressions;
 
 namespace Shop.DataAccess.Concrete.EntityFramework
 {
-    public class EfProductDal : EfBaseRepository<Product, ShopContext>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product, ShopContext>, IProductDal
     {
         public override ICollection<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {

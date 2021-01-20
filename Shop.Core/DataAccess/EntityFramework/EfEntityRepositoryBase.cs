@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Shop.Core.DataAccess.EntityFramework
 {
-    public class EfBaseRepository<TEntity, TContext> : IEntityRepository<TEntity>
+    public abstract class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
     {

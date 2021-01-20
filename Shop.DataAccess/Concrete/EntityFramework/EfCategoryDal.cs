@@ -5,7 +5,7 @@ using Shop.Entities.Concrete;
 
 namespace Shop.DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal : EfBaseRepository<Category, ShopContext>, ICategoryDal
+    public class EfCategoryDal : EfEntityRepositoryBase<Category, ShopContext>, ICategoryDal
     {
     }
 }

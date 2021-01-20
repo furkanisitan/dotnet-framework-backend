@@ -10,7 +10,7 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
         private static int _number;
 
         [TestMethod]
-        public void Test_instance_method()
+        public void TestInstanceMethod()
         {
             var call1 = InstanceMethod();
             var call2 = InstanceMethod();

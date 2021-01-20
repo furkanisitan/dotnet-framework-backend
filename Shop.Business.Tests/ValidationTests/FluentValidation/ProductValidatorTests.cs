@@ -11,7 +11,7 @@ namespace Shop.Business.Tests.ValidationTests.FluentValidation
     public class ProductValidatorTests
     {
         [TestMethod]
-        public void Product_name_should_be_unique()
+        public void Should_UniqueProductName()
         {
             var mock = new Mock<IProductService>();
             mock.Setup(x => x.GetAll()).Returns(

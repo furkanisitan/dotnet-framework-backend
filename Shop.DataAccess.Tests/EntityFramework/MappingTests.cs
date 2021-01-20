@@ -7,7 +7,7 @@ namespace Shop.DataAccess.Tests.EntityFramework
     public class MappingTests
     {
         [TestMethod]
-        public void Create_database_with_mappings()
+        public void Test_CreateDbWithMappings()
         {
             var context = new ShopDataAccessTestContext();
             context.Database.Initialize(true);

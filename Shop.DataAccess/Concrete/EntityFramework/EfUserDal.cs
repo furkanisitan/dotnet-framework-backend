@@ -5,7 +5,7 @@ using Shop.Entities.Concrete;
 
 namespace Shop.DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal : EfBaseRepository<User, ShopContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, ShopContext>, IUserDal
     {
     }
 }

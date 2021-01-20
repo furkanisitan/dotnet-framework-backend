@@ -13,14 +13,14 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
         private ShopBusinessTestContext _context;
 
         [TestInitialize]
-        public void Init_database()
+        public void InitDatabase()
         {
             _context = new ShopBusinessTestContext();
             _context.Database.Initialize(true);
         }
 
         [TestMethod]
-        public void Test_entity_framework_transaction_method()
+        public void TestEntityFrameworkTransactionMethod()
         {
             try { EntityFrameworkTransactionMethod(); }
             catch { /* ignored */ }

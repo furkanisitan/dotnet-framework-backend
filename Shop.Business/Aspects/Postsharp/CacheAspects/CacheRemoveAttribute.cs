@@ -1,4 +1,5 @@
 ﻿using PostSharp.Aspects;
+using PostSharp.Extensibility;
 using PostSharp.Serialization;
 using Shop.Core.CrossCuttingConcerns.Caching;
 using System;
@@ -36,20 +37,24 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
             _methodNames = methodNames;
         }
 
-        public override void RuntimeInitialize(MethodBase method)
+        public override bool CompileTimeValidate(MethodBase method)
         {
             if (!typeof(ICacheManager).IsAssignableFrom(_cacheManagerType))
-                throw new Exception("Wrong Cache Manager");
+                throw new InvalidAnnotationException($"The cacheManagerType is not implement {typeof(ICacheManager).FullName}.");
 
+            return base.CompileTimeValidate(method);
+        }
+
+        public override void RuntimeInitialize(MethodBase method)
+        {
             _cacheManager = (ICacheManager)Activator.CreateInstance(_cacheManagerType);
             base.RuntimeInitialize(method);
         }
 
         public override void OnSuccess(MethodExecutionArgs args)
         {
-            var methodNamespace = $"{args.Method.ReflectedType?.Namespace}.{args.Method.ReflectedType?.Name}";
-            if (_declaringType != null) methodNamespace = $"{_declaringType?.Namespace}.{_declaringType?.Name}";
-            foreach (var methodName in _methodNames) _cacheManager.RemoveByPattern($"{methodNamespace}.{methodName}");
+            _declaringType = _declaringType ?? args.Method.ReflectedType;
+            foreach (var methodName in _methodNames) _cacheManager.RemoveByPattern($"{_declaringType?.FullName}.{methodName}");
         }
     }
 }
