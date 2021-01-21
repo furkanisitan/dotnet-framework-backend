@@ -78,14 +78,15 @@
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AspectTests\Postsharp\CacheAttributeTests.cs" />
-    <Compile Include="AspectTests\Postsharp\CacheRemoveAttributeTests.cs" />
-    <Compile Include="AspectTests\Postsharp\Log4NetAttributeTests.cs" />
-    <Compile Include="AspectTests\Postsharp\PerformanceCounterAttributeTests.cs" />
-    <Compile Include="AspectTests\Postsharp\TransactionScopeAttributeTests.cs" />
+    <Compile Include="AspectTests\Postsharp\AuthorizationAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\CacheAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\CacheRemoveAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\Log4NetAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\PerformanceCounterAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\TransactionScopeAspectTests.cs" />
     <Compile Include="Db\EntityFramework\Configuration\ShopBusinessTestContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AspectTests\Postsharp\FluentValidationAttributeTests.cs" />
+    <Compile Include="AspectTests\Postsharp\FluentValidationAspectTests.cs" />
     <Compile Include="ValidationTests\FluentValidation\ProductValidatorTests.cs" />
   </ItemGroup>
   <ItemGroup>

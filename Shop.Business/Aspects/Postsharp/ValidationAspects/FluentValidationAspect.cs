@@ -14,7 +14,7 @@ namespace Shop.Business.Aspects.Postsharp.ValidationAspects
     /// Validates parameters of type 'IEntity'.
     /// </summary>
     [PSerializable]
-    public sealed class FluentValidationAttribute : OnMethodBoundaryAspect
+    public sealed class FluentValidationAspect : OnMethodBoundaryAspect
     {
         private IValidator _validator;
         private Type _validatorType;
@@ -22,7 +22,7 @@ namespace Shop.Business.Aspects.Postsharp.ValidationAspects
 
         /// <param name="validatorType">Type of validation class.</param>
         /// <param name="ruleSets">The names of the ruleSets to validate. (optional)</param>
-        public FluentValidationAttribute(Type validatorType, params string[] ruleSets)
+        public FluentValidationAspect(Type validatorType, params string[] ruleSets)
         {
             _validatorType = validatorType;
             _ruleSets = ruleSets;

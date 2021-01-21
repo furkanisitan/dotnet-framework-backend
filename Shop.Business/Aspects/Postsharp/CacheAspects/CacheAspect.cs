@@ -13,7 +13,7 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
     /// otherwise it adds the return value of the method to the cache.
     /// </summary>
     [PSerializable]
-    public sealed class CacheAttribute : MethodInterceptionAspect
+    public sealed class CacheAspect : MethodInterceptionAspect
     {
         private Type _cacheManagerType;
         private int _cacheDuration;
@@ -21,7 +21,7 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
 
         /// <param name="cacheManagerType">Type of cache manager class.</param>
         /// <param name="duration">Cache durations in minutes.</param>
-        public CacheAttribute(Type cacheManagerType, int duration = 60)
+        public CacheAspect(Type cacheManagerType, int duration = 60)
         {
             _cacheManagerType = cacheManagerType;
             _cacheDuration = duration;

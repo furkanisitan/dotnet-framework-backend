@@ -8,7 +8,7 @@ using System.Reflection;
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class FluentValidationAttributeTests
+    public class FluentValidationAspectTests
     {
 
         [TestMethod]
@@ -18,7 +18,7 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
             Assert.IsTrue(ex.InnerException is ValidationException);
         }
 
-        [FluentValidation(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator))]
         private void InstanceMethod(Product product) { }
 
     }

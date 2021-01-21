@@ -1,14 +1,14 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shop.Business.Aspects.Postsharp.TransactionAspects;
 using Shop.Business.Tests.Db.EntityFramework.Configuration;
 using Shop.Entities.Concrete;
+using System;
 using System.Linq;
-using Shop.Business.Aspects.Postsharp.TransactionAspects;
 
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class TransactionScopeAttributeTests
+    public class TransactionScopeAspectTests
     {
         private ShopBusinessTestContext _context;
 
@@ -27,7 +27,7 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
             Assert.AreEqual(0, _context.Categories.Count());
         }
 
-        [TransactionScope]
+        [TransactionScopeAspect]
         private void EntityFrameworkTransactionMethod()
         {
             _context.Categories.Add(new Category { Name = "category1", });

@@ -5,7 +5,7 @@ using System.Transactions;
 namespace Shop.Business.Aspects.Postsharp.TransactionAspects
 {
     [PSerializable]
-    public sealed class TransactionScopeAttribute : OnMethodBoundaryAspect
+    public sealed class TransactionScopeAspect : OnMethodBoundaryAspect
     {
         public override void OnEntry(MethodExecutionArgs args)
         {

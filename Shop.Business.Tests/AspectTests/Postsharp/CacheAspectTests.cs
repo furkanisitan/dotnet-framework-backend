@@ -5,27 +5,24 @@ using Shop.Core.CrossCuttingConcerns.Caching.Microsoft;
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class CacheRemoveAttributeTests
+    public class CacheAspectTests
     {
         private static int _number;
 
         [TestMethod]
-        public void TestInstanceMethods()
+        public void TestInstanceMethod()
         {
             var call1 = InstanceMethod();
-            RemoveCacheOfInstanceMethod();
             var call2 = InstanceMethod();
 
-            Assert.AreNotEqual(call1, call2);
+            Assert.AreEqual(call1, call2);
         }
 
-        [Cache(typeof(MemoryCacheManager))]
+        [CacheAspect(typeof(MemoryCacheManager))]
         private int InstanceMethod()
         {
             return ++_number;
         }
 
-        [CacheRemove(typeof(MemoryCacheManager), nameof(InstanceMethod))]
-        private void RemoveCacheOfInstanceMethod() { }
     }
 }

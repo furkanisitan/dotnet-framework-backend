@@ -11,12 +11,12 @@ namespace Shop.Business.Aspects.Postsharp.LogAspects
 {
     [PSerializable]
     [MulticastAttributeUsage(MulticastTargets.Method, TargetMemberAttributes = MulticastAttributes.Instance)]
-    public sealed class Log4NetAttribute : OnMethodBoundaryAspect
+    public sealed class Log4NetAspect : OnMethodBoundaryAspect
     {
         private Type _loggerType;
         private SerializableAbstractLogger _logger;
 
-        public Log4NetAttribute(Type loggerType)
+        public Log4NetAspect(Type loggerType)
         {
             _loggerType = loggerType;
         }

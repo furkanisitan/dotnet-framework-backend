@@ -12,7 +12,7 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
     /// If declaringType is not passed, method names are searched under the related method's class.
     /// </summary>
     [PSerializable]
-    public sealed class CacheRemoveAttribute : OnMethodBoundaryAspect
+    public sealed class CacheRemoveAspect : OnMethodBoundaryAspect
     {
         private Type _cacheManagerType;
         private Type _declaringType;
@@ -21,7 +21,7 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
 
         /// <param name="cacheManagerType">Type of cache manager class.</param>
         /// <param name="methodNames">A list of names of methods to invalidate.</param>
-        public CacheRemoveAttribute(Type cacheManagerType, params string[] methodNames)
+        public CacheRemoveAspect(Type cacheManagerType, params string[] methodNames)
         {
             _cacheManagerType = cacheManagerType;
             _methodNames = methodNames;
@@ -30,7 +30,7 @@ namespace Shop.Business.Aspects.Postsharp.CacheAspects
         /// <param name="cacheManagerType">Type of cache manager class.</param>
         /// <param name="declaringType">The type containing the methods to invalidate.</param>
         /// <param name="methodNames">A list of names of methods to invalidate.</param>
-        public CacheRemoveAttribute(Type cacheManagerType, Type declaringType, params string[] methodNames)
+        public CacheRemoveAspect(Type cacheManagerType, Type declaringType, params string[] methodNames)
         {
             _cacheManagerType = cacheManagerType;
             _declaringType = declaringType;

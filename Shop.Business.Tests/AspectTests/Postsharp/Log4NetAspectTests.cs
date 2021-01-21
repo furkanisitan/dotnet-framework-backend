@@ -5,7 +5,7 @@ using Shop.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class Log4NetAttributeTests
+    public class Log4NetAspectTests
     {
         [TestMethod]
         public void TestInstanceMethodWithoutParameter()
@@ -21,13 +21,13 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
             // check ShopLogTest database
         }
 
-        [Log4Net(typeof(MsSqlLogger))]
+        [Log4NetAspect(typeof(MsSqlLogger))]
         private string InstanceMethodWithoutParameter()
         {
             return "Hello World!";
         }
 
-        [Log4Net(typeof(MsSqlLogger))]
+        [Log4NetAspect(typeof(MsSqlLogger))]
         private string InstanceMethodWithParameter(string message)
         {
             return message;

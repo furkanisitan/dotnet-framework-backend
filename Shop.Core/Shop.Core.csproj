@@ -95,6 +95,11 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\JsonFileLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\MsSqlLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLoggingEvent.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principal\CustomPrincipal.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principal\ICustomPrincipal.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principal\Identity.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Web\AuthenticationHelper.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Web\SecurityUtilities.cs" />
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogMethodDetail.cs" />
     <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />

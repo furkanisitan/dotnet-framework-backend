@@ -10,14 +10,14 @@ namespace Shop.Business.Aspects.Postsharp.PerformanceAspects
     /// It works when the working time of the method exceeds a certain time.
     /// </summary>
     [PSerializable]
-    public class PerformanceCounterAttribute : OnMethodBoundaryAspect
+    public class PerformanceCounterAspect : OnMethodBoundaryAspect
     {
         private int _interval;
         [NonSerialized]
         private Stopwatch _stopwatch;
 
         /// <param name="interval">Time limit. (default => 5 seconds)</param>
-        public PerformanceCounterAttribute(int interval = 5)
+        public PerformanceCounterAspect(int interval = 5)
         {
             _interval = interval;
         }
