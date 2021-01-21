@@ -16,5 +16,8 @@ namespace Shop.Business.Concrete.Managers
 
         public ICollection<Category> GetAll() =>
             _categoryDal.GetAll();
+
+        public bool IsPropertiesEdited(Category category, params string[] properties) =>
+            _categoryDal.IsPropertiesEdited(category, properties);
     }
 }

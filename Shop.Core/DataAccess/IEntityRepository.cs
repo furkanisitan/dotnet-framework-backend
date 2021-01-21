@@ -12,5 +12,13 @@ namespace Shop.Core.DataAccess
         T Add(T entity);
         T Update(T entity);
         void Delete(T entity);
+
+        /// <summary>
+        /// Checks whether the values of the specified properties have changed.
+        /// </summary>
+        /// <param name="entity">The IEntity object.</param>
+        /// <param name="properties">The properties to check.</param>
+        /// <returns>If the value of any property has edited, true; otherwise, false.</returns>
+        bool IsPropertiesEdited(T entity, params string[] properties);
     }
 }

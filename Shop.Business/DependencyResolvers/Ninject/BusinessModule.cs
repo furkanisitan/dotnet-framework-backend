@@ -1,11 +1,8 @@
-﻿using FluentValidation;
-using Ninject.Modules;
+﻿using Ninject.Modules;
 using Shop.Business.Abstract;
 using Shop.Business.Concrete.Managers;
-using Shop.Business.ValidationRules.FluentValidation;
 using Shop.DataAccess.Abstract;
 using Shop.DataAccess.Concrete.EntityFramework;
-using Shop.Entities.Concrete;
 
 namespace Shop.Business.DependencyResolvers.Ninject
 {
@@ -13,7 +10,6 @@ namespace Shop.Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            // service and dal classes
             Bind<IProductService>().To<ProductManager>().InSingletonScope();
             Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
 
@@ -25,9 +21,6 @@ namespace Shop.Business.DependencyResolvers.Ninject
 
             Bind<IRoleService>().To<RoleManager>().InSingletonScope();
             Bind<IRoleDal>().To<EfRoleDal>().InSingletonScope();
-
-            // validator classes
-            Bind<IValidator<Product>>().To<ProductValidator>().InSingletonScope();
         }
     }
 }

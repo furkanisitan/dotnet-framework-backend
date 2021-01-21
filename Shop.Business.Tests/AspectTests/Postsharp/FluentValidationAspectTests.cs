@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shop.Business.Aspects.Postsharp.ValidationAspects;
 using Shop.Business.ValidationRules.FluentValidation;
 using Shop.Entities.Concrete;
-using System.Reflection;
 
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {
@@ -12,10 +11,10 @@ namespace Shop.Business.Tests.AspectTests.Postsharp
     {
 
         [TestMethod]
+        [ExpectedException(typeof(ValidationException))]
         public void TestInstanceMethod()
         {
-            var ex = Assert.ThrowsException<TargetInvocationException>(() => InstanceMethod(new Product { Name = "" }));
-            Assert.IsTrue(ex.InnerException is ValidationException);
+            InstanceMethod(new Product { Name = "" });
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]

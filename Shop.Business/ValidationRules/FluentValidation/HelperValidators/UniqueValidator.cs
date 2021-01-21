@@ -11,11 +11,6 @@ namespace Shop.Business.ValidationRules.FluentValidation.HelperValidators
     {
         private readonly IEnumerable<T> _items;
 
-        /// <summary>
-        /// Checks the uniqueness of the value of the property.
-        /// If the item is in the list and the value of property has not changed, it is considered unique.
-        /// </summary>
-        /// <param name="items">The list for uniqueness check.</param>
         public UniqueValidator(IEnumerable<T> items)
         {
             _items = items;

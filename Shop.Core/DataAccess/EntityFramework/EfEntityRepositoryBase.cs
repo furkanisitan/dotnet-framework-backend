@@ -58,5 +58,22 @@ namespace Shop.Core.DataAccess.EntityFramework
                 context.SaveChanges();
             }
         }
+
+        public bool IsPropertiesEdited(TEntity entity, params string[] properties)
+        {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
+
+            if (!properties.Any())
+                throw new ArgumentException("Input cannot be empty.", nameof(properties));
+
+            using (var context = new TContext())
+            {
+                var tracked = context.Set<TEntity>().SingleOrDefault(x => x.Id == entity.Id);
+                var entry = context.Entry(tracked);
+                entry.CurrentValues.SetValues(entity);
+                return properties.Any(x => !entry.OriginalValues[x].Equals(entry.CurrentValues[x]));
+            }
+        }
     }
 }

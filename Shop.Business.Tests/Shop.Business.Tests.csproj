@@ -81,6 +81,7 @@
     <Compile Include="AspectTests\Postsharp\AuthorizationAspectTests.cs" />
     <Compile Include="AspectTests\Postsharp\CacheAspectTests.cs" />
     <Compile Include="AspectTests\Postsharp\CacheRemoveAspectTests.cs" />
+    <Compile Include="AspectTests\Postsharp\FieldLevelAuthorizationAspectTests.cs" />
     <Compile Include="AspectTests\Postsharp\Log4NetAspectTests.cs" />
     <Compile Include="AspectTests\Postsharp\PerformanceCounterAspectTests.cs" />
     <Compile Include="AspectTests\Postsharp\TransactionScopeAspectTests.cs" />
