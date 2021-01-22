@@ -36,7 +36,7 @@ namespace Shop.DataAccess.Concrete.EntityFramework.Configuration.DatabaseInitial
             {
                 new Role { Name = "Admin" },
                 new Role { Name = "Manager" },
-                new Role { Name = "Staff" }
+                new Role { Name = "User" }
             };
             context.Roles.AddRange(roles);
             context.SaveChanges();
@@ -45,9 +45,9 @@ namespace Shop.DataAccess.Concrete.EntityFramework.Configuration.DatabaseInitial
             // Add users
             var users = new List<User>
             {
-                new User { Fullname = faker.Name.FullName(), Password = "1234", Username = "admin", Roles = new List<Role> { roles[0] } },
-                new User { Fullname = faker.Name.FullName(), Password = "1234", Username = "manager", Roles = new List<Role> { roles[1], roles[2] } },
-                new User { Fullname = faker.Name.FullName(), Password = "1234", Username = "staff", Roles = new List<Role> { roles[2] } }
+                new User { FirstName = faker.Name.FirstName(), LastName = faker.Name.LastName(), Password = "1234", Username = "admin", Roles = new List<Role> { roles[0] } },
+                new User { FirstName = faker.Name.FirstName(), LastName = faker.Name.LastName(), Password = "1234", Username = "manager", Roles = new List<Role> { roles[1], roles[2] } },
+                new User { FirstName = faker.Name.FirstName(), LastName = faker.Name.LastName(), Password = "1234", Username = "staff", Roles = new List<Role> { roles[2] } }
             };
             context.Users.AddRange(users);
             context.SaveChanges();

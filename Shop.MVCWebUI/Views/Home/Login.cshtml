@@ -1,0 +1,37 @@
+﻿@model Shop.MVCWebUI.Models.UserLoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+
+        <div class="col-12 col-md-6 p-2 border">
+            <h5>Login Form</h5>
+            <div>
+                
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="mb-3">
+                        @Html.TextBoxFor(x => x.User.Username, new { @class = "form-control", placeholder = "Username", required = "required", autofocus = "autofocus" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.TextBoxFor(x => x.User.Password, new { @class = "form-control", type = "password", placeholder = "Password", required = "required" })
+                    </div>
+
+                    <div class="mb-3">
+                        @Html.CheckBoxFor(x => x.RememberMe, new { @class = "form-check-input" })
+                        @Html.LabelFor(x => x.RememberMe, "Remember Me", new { @class = "form-check-label" })
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>

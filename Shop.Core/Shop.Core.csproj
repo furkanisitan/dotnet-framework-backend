@@ -61,6 +61,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -95,11 +96,10 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\JsonFileLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\MsSqlLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLoggingEvent.cs" />
-    <Compile Include="CrossCuttingConcerns\Security\Principal\CustomPrincipal.cs" />
-    <Compile Include="CrossCuttingConcerns\Security\Principal\ICustomPrincipal.cs" />
-    <Compile Include="CrossCuttingConcerns\Security\Principal\Identity.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principals\CustomPrincipal.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principals\CustomPrincipalSerializedModel.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\Principals\ICustomPrincipal.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Web\AuthenticationHelper.cs" />
-    <Compile Include="CrossCuttingConcerns\Security\Web\SecurityUtilities.cs" />
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogMethodDetail.cs" />
     <Compile Include="DataAccess\EntityFramework\EfEntityRepositoryBase.cs" />

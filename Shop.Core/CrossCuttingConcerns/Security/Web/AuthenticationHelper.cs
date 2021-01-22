@@ -1,6 +1,7 @@
-﻿using System;
-using System.Text;
+﻿using Shop.Core.CrossCuttingConcerns.Security.Principals;
+using System;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Web.Security;
 
 namespace Shop.Core.CrossCuttingConcerns.Security.Web
@@ -8,30 +9,22 @@ namespace Shop.Core.CrossCuttingConcerns.Security.Web
     public static class AuthenticationHelper
     {
         /// <summary>
-        /// Encrypts the parameters and adds them to the cookie.
+        /// Creates an encrypted FormsAuthenticationTicket and adds it to the cookie.
         /// </summary>
-        public static void CreateAuthCookie(int id, string username, string fullname, string[] roles, DateTime expires, bool rememberMe)
+        public static void CreateAuthenticationTicket(string username, DateTime expiration, bool rememberMe, CustomPrincipalSerializedModel serializedModel)
         {
-            var authTicket = new FormsAuthenticationTicket(1, username, DateTime.Now, expires, rememberMe, CreateAuthTags(id, fullname, roles), FormsAuthentication.FormsCookiePath);
+            var data = new JavaScriptSerializer().Serialize(serializedModel);
+            var authTicket = new FormsAuthenticationTicket(1, username, DateTime.Now, expiration, rememberMe, data);
             var encTicket = FormsAuthentication.Encrypt(authTicket);
-            HttpContext.Current.Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket) { Expires = expires });
+            var cookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket)
+            {
+                HttpOnly = true,
+                Secure = FormsAuthentication.RequireSSL,
+                Path = FormsAuthentication.FormsCookiePath,
+                Domain = FormsAuthentication.CookieDomain,
+            };
+            HttpContext.Current.Response.AppendCookie(cookie);
         }
 
-        /// <summary>
-        /// Converts the data to be added to cookies into a specific format.
-        /// </summary>
-        private static string CreateAuthTags(int id, string fullname, string[] roles)
-        {
-            var stringBuilder = new StringBuilder();
-
-            stringBuilder.Append(fullname);
-            stringBuilder.Append("|");
-            stringBuilder.Append(id);
-            stringBuilder.Append("|");
-            stringBuilder.Append(string.Join(",", roles));
-            stringBuilder.Append("|");
-
-            return stringBuilder.ToString();
-        }
     }
 }
