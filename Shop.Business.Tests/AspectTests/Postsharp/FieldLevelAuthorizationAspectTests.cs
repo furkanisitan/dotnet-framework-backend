@@ -2,11 +2,11 @@
 using Shop.Business.Aspects.Postsharp.SecurityAspects;
 using Shop.Business.FieldLevelAuthorizationRules.FluentValidation;
 using Shop.Business.Tests.Db.EntityFramework.Configuration;
+using Shop.Core.CrossCuttingConcerns.Security.Principals;
 using Shop.Entities.Concrete;
 using System.Linq;
 using System.Security;
 using System.Threading;
-using Shop.Core.CrossCuttingConcerns.Security.Principals;
 
 namespace Shop.Business.Tests.AspectTests.Postsharp
 {

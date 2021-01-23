@@ -1,5 +1,4 @@
 ﻿using log4net.Core;
-using Newtonsoft.Json;
 using System;
 
 namespace Shop.Core.CrossCuttingConcerns.Logging.Log4Net

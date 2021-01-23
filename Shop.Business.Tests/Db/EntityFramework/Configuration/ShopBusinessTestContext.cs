@@ -11,6 +11,5 @@ namespace Shop.Business.Tests.Db.EntityFramework.Configuration
         {
             Database.SetInitializer(new DropCreateDatabaseAlways<ShopBusinessTestContext>());
         }
-
     }
 }

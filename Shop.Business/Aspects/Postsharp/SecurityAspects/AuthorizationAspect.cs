@@ -2,6 +2,7 @@
 using PostSharp.Serialization;
 using System.Linq;
 using System.Security;
+using System.Threading;
 
 namespace Shop.Business.Aspects.Postsharp.SecurityAspects
 {
@@ -20,7 +21,7 @@ namespace Shop.Business.Aspects.Postsharp.SecurityAspects
 
         public override void OnEntry(MethodExecutionArgs args)
         {
-            if (_roles.All(x => !System.Threading.Thread.CurrentPrincipal.IsInRole(x)))
+            if (_roles.All(x => !Thread.CurrentPrincipal.IsInRole(x)))
                 throw new SecurityException("You are not authorized!");
         }
     }

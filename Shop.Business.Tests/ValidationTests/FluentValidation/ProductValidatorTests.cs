@@ -23,7 +23,7 @@ namespace Shop.Business.Tests.ValidationTests.FluentValidation
                 });
             var productService = mock.Object;
             var productValidator = new ProductValidator(productService);
-            
+
             var notUniqueProduct = new Product { Id = 4, Name = "product3" };
             var uniqueProduct = new Product { Id = 5, Name = "product4" };
             var updatedProduct = new Product { Id = 2, Name = "product2" };

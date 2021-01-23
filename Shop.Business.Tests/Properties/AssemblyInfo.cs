@@ -1,5 +1,4 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Shop.Business.Tests")]
@@ -13,7 +12,7 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("dd2188d3-6977-4b52-b878-dc7592d5fdb4")]
+[assembly: Guid("1d177268-5367-4634-91b9-bd666592c7a0")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
