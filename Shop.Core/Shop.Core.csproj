@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PostSharp.6.8.8\build\PostSharp.props" Condition="Exists('..\packages\PostSharp.6.8.8\build\PostSharp.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -55,11 +56,15 @@
     <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="PostSharp, Version=6.8.8.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Redist.6.8.8\lib\net45\PostSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -88,6 +93,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aspects\Postsharp\CacheAspects\CacheAspect.cs" />
+    <Compile Include="Aspects\Postsharp\CacheAspects\CacheRemoveAspect.cs" />
+    <Compile Include="Aspects\Postsharp\LogAspects\Log4NetAspect.cs" />
+    <Compile Include="Aspects\Postsharp\PerformanceAspects\PerformanceCounterAspect.cs" />
+    <Compile Include="Aspects\Postsharp\SecurityAspects\AuthorizationAspect.cs" />
+    <Compile Include="Aspects\Postsharp\SecurityAspects\FieldLevelAuthorizationAspect.cs" />
+    <Compile Include="Aspects\Postsharp\TransactionAspects\TransactionScopeAspect.cs" />
+    <Compile Include="Aspects\Postsharp\ValidationAspects\FluentValidationAspect.cs" />
+    <Compile Include="Aspects\Postsharp\ValidationAspects\FluentValidationBaseAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Caching\ICacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Caching\Microsoft\MemoryCacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Layouts\Helpers\CustomPropertiesContractResolver.cs" />
@@ -96,6 +110,7 @@
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\JsonFileLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\Loggers\MsSqlLogger.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SerializableLoggingEvent.cs" />
+    <Compile Include="CrossCuttingConcerns\Security\FieldLevelAuthorizationRules\FluentValidation\AbstractFlaValidator.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Principals\CustomPrincipal.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Principals\CustomPrincipalSerializedModel.cs" />
     <Compile Include="CrossCuttingConcerns\Security\Principals\ICustomPrincipal.cs" />
@@ -121,6 +136,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\PostSharp.6.8.8\build\PostSharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.6.8.8\build\PostSharp.props'))" />
+    <Error Condition="!Exists('..\packages\PostSharp.6.8.8\build\PostSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.6.8.8\build\PostSharp.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\PostSharp.6.8.8\build\PostSharp.targets" Condition="Exists('..\packages\PostSharp.6.8.8\build\PostSharp.targets')" />
 </Project>
