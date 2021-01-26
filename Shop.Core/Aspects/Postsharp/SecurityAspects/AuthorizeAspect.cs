@@ -10,11 +10,11 @@ namespace Shop.Core.Aspects.Postsharp.SecurityAspects
     /// Checks the authorization to run the method body.
     /// </summary>
     [PSerializable]
-    public class AuthorizationAspect : OnMethodBoundaryAspect
+    public class AuthorizeAspect : OnMethodBoundaryAspect
     {
         private string[] _roles;
 
-        public AuthorizationAspect(params string[] roles)
+        public AuthorizeAspect(params string[] roles)
         {
             _roles = roles;
         }

@@ -7,7 +7,7 @@ using System.Threading;
 namespace Shop.Core.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class AuthorizationAspectTests
+    public class AuthorizeAspectTests
     {
         [TestInitialize]
         public void Init()
@@ -26,7 +26,7 @@ namespace Shop.Core.Tests.AspectTests.Postsharp
 
         [TestMethod]
         [ExpectedException(typeof(SecurityException))]
-        [AuthorizationAspect("Admin")]
+        [AuthorizeAspect("Admin")]
         public void Should_ThrowSecurityException_When_UserRolesNotContainsAdmin()
         {
             // ...

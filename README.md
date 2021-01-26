@@ -53,13 +53,13 @@ In this project, there are sample coding for some structures that a backend appl
 
 ##### Role-Based Authorization
 - used: [Postsharp](https://www.postsharp.net/), [System.Security.Principal](https://docs.microsoft.com/tr-tr/dotnet/api/system.security.principal?view=dotnet-plat-ext-5.0), [FormsAuthenticationTicket](https://docs.microsoft.com/en-us/dotnet/api/system.web.security.formsauthenticationticket?view=netframework-4.8)
-- tests: [AuthorizationAspectTests.cs](Shop.Core.Tests/AspectTests/Postsharp/AuthorizationAspectTests.cs)
+- tests: [AuthorizeAspectTests.cs](Shop.Core.Tests/AspectTests/Postsharp/AuthorizeAspectTests.cs)
 - web integration: [AuthenticationHelper.cs](Shop.Core/CrossCuttingConcerns/Security/Web/AuthenticationHelper.cs), [ OnPostAuthenticateRequest Method](Shop.MVCWebUI/Global.asax.cs#L31)
 - login: [Login Action](Shop.MVCWebUI/Controllers/HomeController.cs#L35)
 
 ##### Field Level Role-Based Authorization
 - used: [Postsharp](https://www.postsharp.net/),  [FluentValidation](https://fluentvalidation.net/)
-- tests: [FieldLevelAuthorizationAspectTests.cs](Shop.Core.Tests/AspectTests/Postsharp/FieldLevelAuthorizationAspectTests.cs)
+- tests: [FieldLevelAuthorizeAspectTests.cs](Shop.Core.Tests/AspectTests/Postsharp/FieldLevelAuthorizeAspectTests.cs)
 
 ##### Performance Counter
 - used: [Postsharp](https://www.postsharp.net/), [Stopwatch](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-5.0)

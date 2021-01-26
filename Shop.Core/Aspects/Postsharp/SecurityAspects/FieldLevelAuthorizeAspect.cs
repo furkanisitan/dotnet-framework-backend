@@ -12,9 +12,9 @@ using System.Security;
 namespace Shop.Core.Aspects.Postsharp.SecurityAspects
 {
     [PSerializable]
-    public class FieldLevelAuthorizationAspect : FluentValidationBaseAspect
+    public class FieldLevelAuthorizeAspect : FluentValidationBaseAspect
     {
-        public FieldLevelAuthorizationAspect(Type validatorType, params string[] ruleSets) : base(validatorType, ruleSets) { }
+        public FieldLevelAuthorizeAspect(Type validatorType, params string[] ruleSets) : base(validatorType, ruleSets) { }
 
         public override bool CompileTimeValidate(MethodBase method)
         {

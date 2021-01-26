@@ -11,7 +11,7 @@ using System.Threading;
 namespace Shop.Core.Tests.AspectTests.Postsharp
 {
     [TestClass]
-    public class FieldLevelAuthorizationAspectTests
+    public class FieldLevelAuthorizeAspectTests
     {
         private CoreTestContext _context;
 
@@ -42,7 +42,7 @@ namespace Shop.Core.Tests.AspectTests.Postsharp
             UpdateCategory(category);
         }
 
-        [FieldLevelAuthorizationAspect(typeof(CategoryFlaValidator), "update")]
+        [FieldLevelAuthorizeAspect(typeof(CategoryFlaValidator), "update")]
         public void UpdateCategory(Category category)
         {
             // ...
